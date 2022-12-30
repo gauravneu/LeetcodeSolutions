@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class UF {
     //Weighted quick union by rank with path compression by halving
-    //parent array to
+    //parent array
     private int[] parent; // parent[i] = parent of i
     private byte[] rank; // rank[i] = rank of subtree rooted at i
     private int count; // number of components
