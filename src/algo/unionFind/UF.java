@@ -19,6 +19,19 @@ public class UF {
         }
     }
 
+    public static void main(String[] args) {
+        int n = StdIn.readInt();
+        UF uf = new UF(n);
+        while (!StdIn.isEmpty()) {
+            int p = StdIn.readInt();
+            int q = StdIn.readInt();
+            if (uf.find(p) == uf.find(q)) continue;
+            uf.union(p, q);
+            StdOut.println(p + " " + q);
+        }
+        StdOut.println(uf.count() + "components");
+    }
+
     public int find(int p) {
         validate(p);
         while (p != parent[p]) {
@@ -54,18 +67,5 @@ public class UF {
     private void validate(int p) {
         int n = parent.length;
         if (p < 0 || p >= n) throw new IllegalArgumentException("index " + p + " is not between 0 and " + (n - 1));
-    }
-
-    public static void main(String[] args) {
-        int n = StdIn.readInt();
-        UF uf = new UF(n);
-        while(!StdIn.isEmpty()){
-            int p =StdIn.readInt();
-            int q = StdIn.readInt();
-            if(uf.find(p) == uf.find(q)) continue;
-            uf.union(p,q);
-            StdOut.println(p+" "+q);
-        }
-        StdOut.println(uf.count()+ "components");
     }
 }

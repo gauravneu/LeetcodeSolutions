@@ -20,17 +20,18 @@ Follow up: What if the inputs contain Unicode characters? How would you adapt yo
  */
 
 
-
 // 256 and '0' for unicode character
 public class validAnagram242 {
     public boolean isAnagram(String s, String t) {
-        if(s.length() != t.length()){return false;}
-        int[] s1 = new int[256];
-        for(int i=0 ; i<s.length() ;i++){
-            s1[s.charAt(i)-'0']++;
-            s1[t.charAt(i)-'0']--;
+        if (s.length() != t.length()) {
+            return false;
         }
-        for(int i=0; i<256; i++){
+        int[] s1 = new int[256];
+        for (int i = 0; i < s.length(); i++) {
+            s1[s.charAt(i) - '0']++;
+            s1[t.charAt(i) - '0']--;
+        }
+        for (int i = 0; i < 256; i++) {
             if (s1[i] > 0) return false;
         }
         return true;

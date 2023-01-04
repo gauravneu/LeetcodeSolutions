@@ -34,14 +34,14 @@ public class bestTimetoBuyAndSellStock {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
 
-        for(int i = 0; i < prices.length; i++){
+        for (int i = 0; i < prices.length; i++) {
             // if(prices[i] < min){
             //     min = prices[i];
             // }
-            min = Math.min(prices[i],min);
+            min = Math.min(prices[i], min);
             max = prices[i] - min;
             // if(globalMax < max) globalMax = max;
-            globalMax = Math.max(globalMax,max);
+            globalMax = Math.max(globalMax, max);
         }
         return globalMax;
     }

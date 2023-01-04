@@ -27,38 +27,31 @@ s consists of parentheses only '()[]{}'.
  */
 
 
-
 public class validParentheses20 {
     public boolean isValid(String s) {
-        HashMap<Character,Character> hs = new HashMap<>();
-        hs.put('(',')');
-        hs.put('{','}');
-        hs.put('[',']');
+        HashMap<Character, Character> hs = new HashMap<>();
+        hs.put('(', ')');
+        hs.put('{', '}');
+        hs.put('[', ']');
         Stack<Character> st = new Stack<>();
-        for(char c: s.toCharArray()){
+        for (char c : s.toCharArray()) {
 
             // if(!st.empty()){
             //     System.out.println(hs.get(st.peek()));
             // }
 
-            if(hs.containsKey(c)){
+            if (hs.containsKey(c)) {
                 st.add(c);
-            }
-            else if(st.empty()){
+            } else if (st.empty()) {
                 return false;
-            }
-            else{
-                if(c == hs.get(st.peek())){
+            } else {
+                if (c == hs.get(st.peek())) {
                     st.pop();
-                }
-                else if(c != hs.get(st.peek())){
+                } else if (c != hs.get(st.peek())) {
                     return false;
                 }
             }
         }
-        if(st.empty()){
-            return true;
-        }
-        return false;
+        return st.empty();
     }
 }

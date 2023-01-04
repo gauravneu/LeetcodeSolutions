@@ -28,7 +28,7 @@ public class reverseLinkedList206 {
         ListNode prev = null;
         ListNode curr = head;
         ListNode n = null;
-        while(curr != null){
+        while (curr != null) {
             n = curr.next;
             curr.next = prev;
             prev = curr;

@@ -25,8 +25,9 @@ The number of nodes in the tree is in the range [0, 100].
 
 public class binaryTreeInorderTraversal94 {
     List<Integer> ls = new ArrayList<>();
+
     public List<Integer> inorderTraversal(TreeNode root) {
-        if(root == null) return new ArrayList<Integer>();
+        if (root == null) return new ArrayList<Integer>();
         inorderTraversal(root.left);
         ls.add(root.val);
         inorderTraversal(root.right);
@@ -45,7 +46,6 @@ public class binaryTreeInorderTraversal94 {
 //        ls.add(root.val);
 //        helper(root.right);
 //    }
-
 
 
 }

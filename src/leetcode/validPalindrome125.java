@@ -28,7 +28,6 @@ s consists only of printable ASCII characters.
  */
 
 
-
 public class validPalindrome125 {
     public boolean isPalindrome(String s) {
         String b = s.toLowerCase();

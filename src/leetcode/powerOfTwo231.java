@@ -22,15 +22,13 @@ Output: false
  */
 
 
-
 public class powerOfTwo231 {
     public boolean isPowerOfTwo(int n) {
-        if(n == 1) return true;
-        if(n < 1) return false;
-        double h = Math.log(n)/Math.log(2);
-        if(h - (int)h == 0.0) return true;
-        if((h - (int)h)*1000000000 < 1.0) return true;
-        return false;
+        if (n == 1) return true;
+        if (n < 1) return false;
+        double h = Math.log(n) / Math.log(2);
+        if (h - (int) h == 0.0) return true;
+        return (h - (int) h) * 1000000000 < 1.0;
     }
 }
 
