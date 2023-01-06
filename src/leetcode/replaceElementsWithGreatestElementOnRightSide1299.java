@@ -37,15 +37,15 @@ import java.util.HashMap;
 
 public class replaceElementsWithGreatestElementOnRightSide1299 {
     public int[] replaceElements(int[] arr) {
-        if(arr. length == 1) return new int[]{-1};
+        if (arr.length == 1) return new int[]{-1};
         int max = -1;
-        HashMap<Integer,Integer> hm = new HashMap<>();
-        for(int i = arr.length - 2; i >= 0 ; i--){
-            max = Math.max(max,arr[i+1]);
-            hm.put(i,max);
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for (int i = arr.length - 2; i >= 0; i--) {
+            max = Math.max(max, arr[i + 1]);
+            hm.put(i, max);
         }
         arr[arr.length - 1] = -1;
-        for(int i =0; i < arr.length - 1 ;i++){
+        for (int i = 0; i < arr.length - 1; i++) {
             arr[i] = hm.get(i);
         }
         return arr;
