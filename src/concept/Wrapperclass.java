@@ -1,6 +1,6 @@
 package src.concept;
 
-public class Practice {
+public class Wrapperclass {
     Boolean[][] visited = new Boolean[4][4];
     public void c1(){
     for(int i = 0;i < 4; i++){
@@ -11,7 +11,7 @@ public class Practice {
     }
 
     public static void main(String[] args) {
-        Practice p = new Practice();
+        Wrapperclass p = new Wrapperclass();
         p.c1();
     }
 }
